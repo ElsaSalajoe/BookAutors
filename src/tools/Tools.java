@@ -5,6 +5,7 @@
  */
 package tools;
 
+import java.util.Scanner;
 import myclasses.Author;
 import myclasses.Book;
 
@@ -14,16 +15,34 @@ import myclasses.Book;
  * @author Elsa
  */
 public class Tools {
-    public Author createAuthor(String firstname, String lastname){
+    
+    Scanner sc = new Scanner(System.in);
+    
+    public Author[] createAuthors(int countAuthorsInBook){
+        Author[] authors = new Author[countAuthorsInBook];
+        for (int i = 0; i < countAuthorsInBook; i++){
+            System.out.println("Имя автора: " +(i+1)+": ");
+            String firstname = sc.nextLine();
+            System.out.println("Фамилия автора: "+(i+1)+": ");
+            String lastname = sc.nextLine();
             Author author = new Author();
             author.setFirstname(firstname);
             author.setLastname(lastname);
-            return author;
+            authors[i] = author;
+        }
+        return authors;
         }
         
-        public Book createBook(String title){
+        public Book createBook(){
             Book book = new Book();
-            book.setTitle(title);
+            System.out.println("Название книги");
+            book.setTitle(sc.nextLine());
+            System.out.println("Сколько авторов в этой книге: ");
+            int countAuthorsInBook = sc.nextInt();
+            sc.nextLine();
+            book.setAuthors(createAuthors(countAuthorsInBook));
             return book;
         }
+        
+        
 }

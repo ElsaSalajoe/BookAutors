@@ -10,7 +10,6 @@ public class JKTV21_OOPTest {
     public static void main(String[] args) {
         App app = new App();
         app.run();
-        
         /*Author author1 = new Author();
         author1.setFirstname("Lev");
         author1.setLastname("Tolstoy");

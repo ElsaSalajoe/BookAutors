@@ -30,7 +30,7 @@ package myclasses;
 
     @Override
     public String toString() {
-        return "Author{" + "firstname=" + firstname + ", lastname=" + lastname + '}';
+        return "Author{" + "firstname=" + getFirstname() + ", lastname=" + getLastname() + '}';
     }
     
 }
